@@ -1,0 +1,122 @@
+            html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: 100%;
+  /* Negative indent footer by its height */
+  margin: 0 auto -82px 0;
+  /* Pad bottom by footer height */
+  padding: 0;
+}
+
+/* Set the fixed height of the footer here */
+#footer {
+  height: 81px;
+  background-color: #f5f5f5;
+  background-color: rgba(255,255,255,0.25);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  -webkit-transition: height 0.6s ease-out;
+  -moz-transition: height 0.6s ease-out;
+  -ms-transition: height 0.6s ease-out;
+  -o-transition: height 0.6s ease-out;
+  transition: height 0.6s ease-out;
+}
+
+#footer:hover {
+  height: 100px;
+}
+
+#footer .btn-lg {
+  margin : 10px 0;
+  padding: 18px 0;
+  -webkit-transition: all 0.6s ease-out;
+  -moz-transition: all 0.6s ease-out;
+  -ms-transition: all 0.6s ease-out;
+  -o-transition: all 0.6s ease-out;
+  transition: all 0.6s ease-out;
+}
+
+#footer:hover .btn-lg {
+  padding: 28px 0;
+}
+
+#wrap > .center-container {
+  padding: 0;
+  margin:0;
+}
+
+#footer > .container {
+  padding-top:5px
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.center-container {
+  height:100%;
+}
+
+.center-row {
+  height:100%;
+  background-image:url('../img/picjumbo.com_IMG_9895_1024_mini.jpg');
+  background-size:cover;
+  color:#fff;
+}
+
+.brand-font {
+  font-family: 'Pacifico', cursive;
+}
+
+h1.brand-font {
+  font-size: 6em;
+  text-align: center;
+}
+
+p.lead {
+  font-size: 4em;
+  text-align: center;
+}
+
+.middle {
+  text-align: center;
+  width: 50%;
+  height: 100px;
+
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  
+  margin: auto;
+}
+
+a.start {
+  font-size: 3em;
+  padding: 0.5em;
+}
+
+.inset-text {
+    /* Shadows are visible under slightly transparent text color */
+    text-shadow: rgba(0, 0, 0, 0.5) 1px 1px 0px;
+}
+
+.modal-dialog {
+  width: 620px;
+}
+
+@media screen and (max-width: 1024px){
+  p.lead {
+    font-size: 3em;
+  }
+  a.start {
+    font-size: 2em;
+  }
+}

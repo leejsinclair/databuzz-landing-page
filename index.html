@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+        <meta charset="utf-8">
+        <title>databuzz.io, tweet #survey, get results. It's that easy</title>
+        <meta name="generator" content="Bootply" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="./assets/css/site.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+        <!--[if lt IE 9]>
+          <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <link rel="shortcut icon" href="/bootstrap/img/favicon.ico">
+        <link rel="apple-touch-icon" href="/bootstrap/img/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/bootstrap/img/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/bootstrap/img/apple-touch-icon-114x114.png">
+    </head>
+    
+    <!-- HTML code from Bootply.com editor -->
+    
+    <body  >
+        
+        <!-- Wrap all page content here -->
+<div id="wrap">
+  
+  <!-- Begin page content -->
+  <div class="center-container">
+    
+    <div class="center-row">
+    
+      <div class="container">
+        <h1 class="brand-font inset-text">databuzz.io</h1>
+        <p class="lead inset-text">tweet #survey, get results. It's that easy.</p>
+        <a href="http://twitter.com/intent/tweet?text=Your%20question%20%23survey&via=databuzzsurveys" class="middle btn btn-info btn-block btn-lg start" target="_blank" onclick="window.open(this.href,'tweet','height=300,width=500');return false;">Start your survey</a>
+
+      </div>
+    
+    </div>
+    
+    
+  </div>
+  
+</div>
+
+      <div id="footer">
+        <div class="container">
+          <a href="#videoModal" class="btn btn-block btn-success btn-lg" id="video-link">Watch video</a>
+        </div>
+      </div>
+
+      <div id="videoModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Databuzz.io, tweet #survey, get results.</h4>
+                </div>
+                <div class="modal-body">
+                    <iframe width="560" height="315" frameborder="0" allowfullscreen="" id="video"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+      <script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+      <script type='text/javascript' src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+      
+      <!-- JavaScript jQuery code from Bootply.com editor  -->
+      
+      <script type='text/javascript'>
+      
+      $(document).ready(function() {
+        
+      });
+
+      $('#video-link').click(function () {
+          var src = 'http://www.youtube.com/v/DbwiuPEh3M8&amp;autoplay=1&amp;rel=0'; //<iframe width="560" height="315" src="//www.youtube.com/embed/GjVnAlbSNHs" frameborder="0" allowfullscreen></iframe>
+          $('#videoModal').modal('show');
+          $('#video').attr('src', src);
+      });
+
+      $('#videoModal').on('hide.bs.modal', function (e) {
+        $('#video').removeAttr('src');
+      })
+      </script>
+    </body>
+</html>
