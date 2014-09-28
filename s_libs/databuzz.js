@@ -11,20 +11,6 @@ var config = {
 var chart;
 var dps = []; 
 
-$(document).ready(function() {
-	'use strict';
-	setup_chart();
-	
-	var survey_id = getSurveyIdFromUrl();
-	
-	if (survey_id.length>0) {
-		fetch_by_id(survey_id);
-	} 
-	
-	$('.search').on('keyup', check_search_input);
-	
-});
-
 // URL could be databuzz.io/survey.html?THE_SURVEY_ID, or
 // databuzz.io/survey/THE_SURVEY_ID
 function getSurveyIdFromUrl() {

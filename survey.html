@@ -37,6 +37,21 @@
 		<div class="answer_div" style="display:none;">
 			<div id="answer_chart"></div>
 		</div>
+
+		<script>
+			$(document).ready(function() {
+				'use strict';
+				setup_chart();
+				var survey_id = getSurveyIdFromUrl();
+				
+				if (survey_id.length>0) {
+					fetch_by_id(survey_id);
+				} 
+				
+				$('.search').on('keyup', check_search_input);
+				
+			});
+		</script>
 		
 	</body>
 	
