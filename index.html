@@ -75,12 +75,15 @@
         	<input type="text" value="" placeholder="type your survey question here  (we’ll do the rest)" id="question-text" maxlength="117" />
         </form>
 
-        <ul id="results-placeholder"></ul>
-
       </div>
     
     </section>
         
+    <section class="survey-teasers">
+      <div class="container">
+        <div id="results-placeholder"></div>
+      </div>
+    </section>
         
     
     
@@ -95,7 +98,11 @@
       <!-- This is the template -->
     <script id="question-template" type="text/x-handlebars-template">
       {{#each items}}
-        <h2>{{question}}</h2>
+        <div class="col-xs-6 col-md-3">
+          <a href="/survey/{{_id}}" class="thumbnail">
+            <h2>{{question}}</h2>
+          </a>
+        </div>
       {{/each}}
     </script>
 
