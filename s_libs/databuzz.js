@@ -184,7 +184,6 @@ function check_search_input() {
 </div>
 */
 function ajax_search(str) {
-	
 		$.ajax({ 
 			url: config.base_url+config.api_search+encodeURIComponent(str), 
 			success: function(results) {
@@ -202,8 +201,7 @@ function ajax_search(str) {
 				});
 				$('.search_results').slideDown();
 			}
-		});		
-		
+		});
 }
 
 
@@ -221,8 +219,36 @@ function fetch_by_url(uri_encoded_url) {
 
 		}
 	});	
-	
 }
 
+var service = (function(){
+	var baseURL = config.base_url;
+	return {
+		'recent': function( callback ) {
+			var ep = '/api/results/recent';
+			$.ajax({ 
+				'url': baseURL + ep, 
+				'success': function(results) {
+					callback(null, results);
+				},
+				'error': function( request, status, err ) {
+					callback( err );
+				}
+			});
+		}
+	};
+})();
 
 
+function recentPosts() {
+	var content = { 'items': [] };
+	var source   = $("#question-template").html();
+	var template = Handlebars.compile(source);
+
+	service.recent( function( err, results ) {
+		if(!err) {
+			content.items = results;
+			$('.search_results').html( template(content) );
+		}
+	});	
+}
