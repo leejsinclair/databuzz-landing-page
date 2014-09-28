@@ -95,7 +95,7 @@ console.log(rec);
 	
 	$('.question_div').find('.profile_pic').attr('src', rec.survey.sourceTweet.user.profile_image_url);
 	//$('.question_div').find('.survey_image').attr('src', rec.images.low_resolution.url);
-	$('.question_div').find('.survey_summary_text').html(rec.question);
+	$('.question_div').find('.survey_summary_text').html(rec.survey.question);
 	
 	$('.question_div').show();
 	
