@@ -72,7 +72,7 @@
       <div class="container">
         
         <form id="question">
-        	<input type="text" value="" placeholder="type your survey question here  (we’ll do the rest)" />
+        	<input type="text" value="" placeholder="type your survey question here  (we’ll do the rest)" id="question-text" maxlength="117" />
         </form>
 
       </div>
@@ -111,10 +111,18 @@
 
       $('#videoModal').on('hide.bs.modal', function (e) {
         $('#video').removeAttr('src');
-      })
+      });
+
+      $( "#question" ).submit(function( event ) {
+        event.preventDefault();
+        var shareStr = encodeURIComponent( document.getElementById('question-text').value + ' #survey');
+        var url = 'http://twitter.com/intent/tweet?text=' + shareStr + '&via=databuzzio';
+        window.open( url,'tweet','height=300,width=500');
+      });
       </script>
       
     </body>
     
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>
 </html>
+<!-- <a href="http://twitter.com/intent/tweet?text=Your%20question%20%23survey&via=databuzzsurveys" class="middle btn btn-info btn-block btn-lg start" target="_blank" onclick="window.open(this.href,'tweet','height=300,width=500');return false;">Start your survey</a> //-->
