@@ -228,7 +228,7 @@ var service = (function(){
 })();
 
 
-function recentPosts() {
+function recentPosts( node ) {
 	'use strict';
 	var content = { 'items': [] };
 	var source   = $('#question-template').html();
@@ -237,7 +237,7 @@ function recentPosts() {
 	service.recent( function( err, results ) {
 		if(!err) {
 			content.items = results;
-			$('.search_results').html( template(content) );
+			node.html( template(content) );
 		}
 	});	
 }
