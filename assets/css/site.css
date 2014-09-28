@@ -157,3 +157,7 @@ footer .credits {
     font-size: 2em;
   }
 }
+
+.question-template a.thumbnail {
+  height: 300px;
+}
