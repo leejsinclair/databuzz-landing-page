@@ -186,8 +186,8 @@ function check_search_input() {
 function ajax_search(str) {
 	'use strict';
 		$.ajax({ 
-			url: config.base_url+config.api_search+encodeURIComponent(str), 
-			success: function(results) {
+			'url': config.base_url+config.api_search+encodeURIComponent(str), 
+			'success': function(results) {
 				$('.search_results').html('');
 				results.forEach(function(item) {
 
@@ -212,8 +212,8 @@ function fetch_by_url(uri_encoded_url) {
 	$('.search_results').hide();
 	
 	$.ajax({ 
-		url: config.base_url+config.api_fetch+uri_encoded_url, 
-		success: function(results) {
+		'url': config.base_url+config.api_fetch+uri_encoded_url, 
+		'success': function(results) {
 			
 			displayQuestion(results[0]);
 			displayAnswers(results[0]);
