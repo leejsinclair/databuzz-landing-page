@@ -1,0 +1,47 @@
+/* Adrian - I appologise - get rid of this rubbish as soon as we start */
+div.search_div {
+	text-align: center;
+}
+input.search {
+	width: 80%;
+	padding: 0.2em;
+	font-size: 2em;
+}
+.search_results {
+	background-color: #eee;
+	margin-left: 10%;
+	margin-right: 10%;
+	position: absolute;
+}
+.search_result {
+	margin: 0.2em;
+	padding: 0.3em;
+	border: thin solid black;
+	border-radius: 1em;
+	text-align: left;
+	min-height: 4em;
+	cursor: pointer;
+}
+.profile_pic {
+	max-height: 4em;
+	width: auto;
+	border-radius: 1em;
+	float: left;
+	margin-right: 1em;
+}
+.search_result .profile_pic {
+	max-height: 4em;
+}
+.question_div {
+	background-color: #ae99ff;
+	border: 0.2em solid blue;
+	border-radius: 1em;
+	width: 30%;
+	padding: 1em;
+	margin: 1em;
+	float: left;
+}
+
+.answer_div {
+	float: none;
+}

@@ -1,7 +1,10 @@
 
 var config = {
-	base_url: 'http://localhost:3000',
-	//api_search: '/surveys/',
+	base_site: 'http://databuzz.io',
+	base_url: 'http://databuzz.io:3000',
+//	base_site: 'http://localhost',
+//	base_url: 'http://localhost:3000',
+	api_search: '/api/survey/search/',
 	api_fetch: '/api/results/',
 }
 
@@ -14,7 +17,11 @@ $(document).ready(function() {
 	
 	var survey_id = getSurveyIdFromUrl();
 	
-	fetch_by_id(survey_id);
+	if (survey_id.length>0) {
+		fetch_by_id(survey_id);
+	} 
+	
+	$('.search').on('keyup', check_search_input);
 	
 });
 
@@ -128,7 +135,7 @@ function displayAnswers(rec) {
 /*
 The search box could contain a URL, in which case we jump to that record directly,
 or some search text, in which case we show a suggestion list
-*
+*/
 function check_search_input() {
 	
 	str = $('.search').val();
@@ -137,6 +144,7 @@ function check_search_input() {
 		return; // need to be at least a few chars long before we search ...
 	}
 	
+	// THIS WONT COME INTO PLAY :
 	// check to see if it is an instagram URL
 	if ($('.search').val().indexOf('instagram.com/')>-1) {
 		// add http:// to start if it ain't already there
@@ -161,7 +169,7 @@ function check_search_input() {
 
 
 
-*
+/*
 <div class="search_div">
 	<input class="search" type="text" placeholder="Enter text to search for surveys ..." />
 	<div class="search_results">
@@ -174,7 +182,7 @@ function check_search_input() {
 		-->
 	</div>
 </div>
-*
+*/
 function ajax_search(str) {
 	
 		$.ajax({ 
@@ -183,11 +191,11 @@ function ajax_search(str) {
 				$('.search_results').html('');
 				results.forEach(function(item) {
 
-					var profile_pic = item.user.profile_picture;
-					var survey_summary_text = item.caption.text;
-					var url = item.link;
+					var profile_pic = item.sourceTweet.user.profile_image_url;
+					var survey_summary_text = item.question;
+					var url = config.base_site+'/survey/'+item._id;
 
-					$('.search_results').append('<div class="search_result" onclick="fetch_by_url(\''+encodeURIComponent(url)+'\')">'+
+					$('.search_results').append('<div class="search_result" onclick="window.location.href = \''+(url)+'\';">'+
 												'<img class="profile_pic" src="'+profile_pic+'"/>'+
 												'<span class="survey_summary_text">'+survey_summary_text+'</span>'+
 												'</div>');				
@@ -217,6 +225,4 @@ function fetch_by_url(uri_encoded_url) {
 }
 
 
-
-*/
 
