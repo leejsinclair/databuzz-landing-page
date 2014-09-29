@@ -157,3 +157,11 @@ footer .credits {
     font-size: 2em;
   }
 }
+
+.survey-teasers a.thumbnail {
+  height: 300px;
+}
+
+.survey-teasers {
+  margin-top: 1em;
+}
