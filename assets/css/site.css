@@ -82,7 +82,7 @@ body {
 	background: #fff;
 	border: 3px solid #DFB0B2;
 	font-size: 2.8em;
-	width: 90%;
+	width: 100%;
 	margin: .5em auto;
 	padding: .2em .4em;
 	font-weight: 300;
@@ -96,7 +96,7 @@ h1.brand {
 	font-family: 'Lato', sans-serif;
 	font-weight: 300;
 	text-align: center;
-	background: url('../img/databuzz-logo.png') no-repeat center center;
+	background: url('../img/databuzz-logo-grey.png') no-repeat center center;
 	text-indent: -9999px;
 	height: 68px;
 	float: left;
@@ -145,6 +145,9 @@ a.start {
   width: 620px;
 }
 
+footer {
+	padding: 3em 0;
+}
 footer .credits {
 	text-align: center;
 }
@@ -158,10 +161,81 @@ footer .credits {
   }
 }
 
+#results-placeholder {
+	display: table;
+}
+#results-placeholder .teaser {
+	display: table-row;
+	padding: 10px;
+}
+#results-placeholder .teaser a {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#results-placeholder h4 {
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+}
+
 .survey-teasers a.thumbnail {
-  height: 300px;
+  height: 200px;
 }
 
 .survey-teasers {
   margin-top: 1em;
 }
+
+.teaser {
+	
+}
+.teaser .thumbnail {
+	display: inline-block;
+	display: block;
+	height: auto;
+	max-width: 100%;
+	padding: 4px;
+	margin-bottom: 20px;
+	line-height: 1.428571429;
+	background-color: #fff;
+	border: 3px solid #ddd;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	-webkit-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+	color: #444;
+}
+.teaser a.thumbnail:hover {
+	border-color: #DFB0B2;
+	text-decoration: none;
+	color: #bc2e2e;
+	background: #f2e5e5;
+}
+
+.teaser h4 {
+	padding: .2em 1em;
+	text-align: center;
+	word-break: break-all;
+}
+
+.answer_div {
+	height: 500px;
+	padding: 30px 0;
+}
+.question_div {
+	padding: 20px;
+	background: #f5f5f5;
+}
+.survey_summary_text {
+	margin-left: 15px;
+}
+
+.canvasjs-chart-toolbar button {
+	margin: 0px;
+	padding: 5px 0 7px !important;
+}
+.canvasjs-chart-toolbar button img {
+	width: 30px;
+}
+
