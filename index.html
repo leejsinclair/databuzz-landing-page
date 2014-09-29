@@ -25,8 +25,8 @@
         
           ga('create', 'UA-44968033-8', 'auto');
           ga('send', 'pageview');
-        
         </script>
+        <script type='text/javascript' src="./assets/js/handlebars-v2.0.0.js"></script>
     </head>
     
     <!-- HTML code from Bootply.com editor -->
@@ -72,13 +72,18 @@
       <div class="container">
         
         <form id="question">
-        	<input type="text" value="" placeholder="type your survey question here  (we’ll do the rest)" />
+        	<input type="text" value="" placeholder="type your survey question here  (we’ll do the rest)" id="question-text" maxlength="117" />
         </form>
 
       </div>
     
     </section>
         
+    <section class="survey-teasers">
+      <div class="container">
+        <div id="results-placeholder"></div>
+      </div>
+    </section>
         
     
     
@@ -90,17 +95,26 @@
 	<p class="credits">Made with love by, @bazmati, @leejsinclair, @drawonthenet &amp; @adriatiq</p>
 </footer>
 
-
+      <!-- This is the template -->
+    <script id="question-template" type="text/x-handlebars-template">
+      {{#each items}}
+        <div class="col-xs-6 col-md-3 teaser">
+          <a href="/survey/{{_id}}" class="thumbnail">
+            <h4>{{question}}</h4>
+          </a>
+        </div>
+      {{/each}}
+    </script>
 
       <script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
       <script type='text/javascript' src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="http://databuzz.io/s_libs/canvasjs/canvasjs.min.js"></script>
+      <script type="text/javascript" src="http://databuzz.io/s_libs/databuzz.js"></script>
       
       <!-- JavaScript jQuery code from Bootply.com editor  -->
-      
       <script type='text/javascript'>
-      
       $(document).ready(function() {
-        
+        recentPosts( $('#results-placeholder') );
       });
 
       $('#video-link').click(function () {
@@ -111,10 +125,19 @@
 
       $('#videoModal').on('hide.bs.modal', function (e) {
         $('#video').removeAttr('src');
-      })
+      });
+
+      $( "#question" ).submit(function( event ) {
+        event.preventDefault();
+        var shareStr = encodeURIComponent( document.getElementById('question-text').value + ' #survey');
+        var url = 'http://twitter.com/intent/tweet?text=' + shareStr + '&via=databuzzio';
+        window.open( url,'tweet','height=300,width=500');
+      });
       </script>
       
     </body>
     
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>
+    
 </html>
+<!-- <a href="http://twitter.com/intent/tweet?text=Your%20question%20%23survey&via=databuzzsurveys" class="middle btn btn-info btn-block btn-lg start" target="_blank" onclick="window.open(this.href,'tweet','height=300,width=500');return false;">Start your survey</a> //-->

@@ -3,15 +3,29 @@
 	<head>
 		<title>DataBuzz.io</title>	
 		
-		<script type="text/javascript" src="survey_libs/jquery-2.1.1.js"></script>
-		<script type="text/javascript" src="survey_libs/canvasjs/canvasjs.min.js"></script>
-		<script type="text/javascript" src="survey_libs/databuzz.js"></script>
+		<script type="text/javascript" src="http://databuzz.io/s_libs/jquery-2.1.1.js"></script>
+		<script type="text/javascript" src="http://databuzz.io/s_libs/canvasjs/canvasjs.min.js"></script>
+		<script type="text/javascript" src="http://databuzz.io/s_libs/databuzz.js"></script>
 		
-		<!-- <link rel="stylesheet" type="text/css" href="databuzz.css" /> -->
+		<link rel="stylesheet" type="text/css" href="http://databuzz.io/databuzz.css" />
 	</head>
 	
 	
 	<body>
+		
+		<div class="search_div">
+			<input class="search" type="text" placeholder="Enter text to search for surveys ..." />
+			<div class="search_results" style="display:none;">
+				<!-- in here looks like this :
+					<div class="search_result">
+						<img class="profile_pic"/>
+						<span class="survey_summary_text"/>
+					</div>
+					...
+				-->
+			</div>
+		</div>
+				
 	
 		<div class="question_div" style="display:none;">
 			<img class="profile_pic"/><br/>
@@ -23,6 +37,21 @@
 		<div class="answer_div" style="display:none;">
 			<div id="answer_chart"></div>
 		</div>
+
+		<script>
+			$(document).ready(function() {
+				'use strict';
+				setup_chart();
+				var survey_id = getSurveyIdFromUrl();
+				
+				if (survey_id.length>0) {
+					fetch_by_id(survey_id);
+				} 
+				
+				$('.search').on('keyup', check_search_input);
+				
+			});
+		</script>
 		
 	</body>
 	
