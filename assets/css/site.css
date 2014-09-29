@@ -82,7 +82,7 @@ body {
 	background: #fff;
 	border: 3px solid #DFB0B2;
 	font-size: 2.8em;
-	width: 90%;
+	width: 100%;
 	margin: .5em auto;
 	padding: .2em .4em;
 	font-weight: 300;
@@ -96,7 +96,7 @@ h1.brand {
 	font-family: 'Lato', sans-serif;
 	font-weight: 300;
 	text-align: center;
-	background: url('../img/databuzz-logo.png') no-repeat center center;
+	background: url('../img/databuzz-logo-grey.png') no-repeat center center;
 	text-indent: -9999px;
 	height: 68px;
 	float: left;
