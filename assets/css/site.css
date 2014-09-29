@@ -219,3 +219,23 @@ footer .credits {
 	word-break: break-all;
 }
 
+.answer_div {
+	height: 500px;
+	padding: 30px 0;
+}
+.question_div {
+	padding: 20px;
+	background: #f5f5f5;
+}
+.survey_summary_text {
+	margin-left: 15px;
+}
+
+.canvasjs-chart-toolbar button {
+	margin: 0px;
+	padding: 5px 0 7px !important;
+}
+.canvasjs-chart-toolbar button img {
+	width: 30px;
+}
+
