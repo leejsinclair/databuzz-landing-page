@@ -106,13 +106,6 @@ function displayAnswers(rec) {
 		dps.push({ label: key, legendText: key.substr(0,12), y: rec.answers[key]});
 	}
 
-	// TESTING DATA SO adriatic CAN STYLE WHILE WE FIGURE OUT
-	// WHY NO RESULTS !!
-	dps.push({ label: 'Mary', legendText: 'Mary', y: 40});
-	dps.push({ label: 'Suzanne', legendText: 'Suzanne', y: 10});
-	dps.push({ label: 'Elinor', legendText: 'Elinor', y: 10});
-	dps.push({ label: 'Liza', legendText: 'Liza', y: 39});
-	dps.push({ label: 'What the hell is this anyways, im not interested in your stooped question so you can all just leave me alone or whatever, go away!', legendText: 'What the hell is', y: 1});
 	chart.render();	
 	
 	
