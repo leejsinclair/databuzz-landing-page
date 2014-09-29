@@ -145,6 +145,9 @@ a.start {
   width: 620px;
 }
 
+footer {
+	padding: 3em 0;
+}
 footer .credits {
 	text-align: center;
 }
@@ -158,10 +161,61 @@ footer .credits {
   }
 }
 
+#results-placeholder {
+	display: table;
+}
+#results-placeholder .teaser {
+	display: table-row;
+	padding: 10px;
+}
+#results-placeholder .teaser a {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#results-placeholder h4 {
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+}
+
 .survey-teasers a.thumbnail {
-  height: 300px;
+  height: 200px;
 }
 
 .survey-teasers {
   margin-top: 1em;
 }
+
+.teaser {
+	
+}
+.teaser .thumbnail {
+	display: inline-block;
+	display: block;
+	height: auto;
+	max-width: 100%;
+	padding: 4px;
+	margin-bottom: 20px;
+	line-height: 1.428571429;
+	background-color: #fff;
+	border: 3px solid #ddd;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	-webkit-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+	color: #444;
+}
+.teaser a.thumbnail:hover {
+	border-color: #DFB0B2;
+	text-decoration: none;
+	color: #bc2e2e;
+	background: #f2e5e5;
+}
+
+.teaser h4 {
+	padding: .2em 1em;
+	text-align: center;
+	word-break: break-all;
+}
+
